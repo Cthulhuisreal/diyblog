@@ -26,7 +26,7 @@ SECRET_KEY = 'c^mo4y3_7fzs=s(%%rv1k3bv@l8jossd)ks8k0(-hb^^in96um'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ACCOUNT_ACTIVATION_DAYS = 2
 # Application definition
 
 INSTALLED_APPS = [

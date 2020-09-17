@@ -32,7 +32,9 @@
 	 <li><a href="{% url 'blog_create' %}">Create a new blog</a></li>
      <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>   
    {% else %}
-     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+		or<br>
+     <li><a href="/accounts/register/">Register</a></li><br>	
    {% endif %} 
   </ul>
  
