@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1>{{ blog.name }}</h1>
+<a href="{% url 'blog_update' blog.pk %}">(Edit blog)</a>  <a href="{% url 'blog_delete' blog.pk %}">(Delete blog)</a>
 <p><strong>Post date</strong> {{ blog.post_date }}</p>
 <p><strong>Author:</strong> <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a></p>
 <p><strong>Description:</strong></p>

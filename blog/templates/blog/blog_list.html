@@ -7,13 +7,17 @@
     <ul>
 
       {% for blog in blog_list %}
+	  {% if user.is_staff %}
       <li>
-        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{blog.post_date}}) — <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a>
+        <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{blog.post_date}}) — <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a> -- <a href="{% url 'blog_update' blog.pk %}">(Edit blog)</a> -- <a href="{% url 'blog_delete' blog.pk %}">(Delete blog)</a>
       </li>
+	  {% else %}
+	  <li>
+	  <a href="{{ blog.get_absolute_url }}">{{ blog.name }}</a> ({{blog.post_date}}) — <a href="{% url 'blogs-by-author' blog.author.pk %}">{{ blog.author }}</a>
+	  </li>
+      {% endif %}
       {% endfor %}
-
     </ul>
-
     {% else %}
       <p>There are no blogs.</p>
     {% endif %}       

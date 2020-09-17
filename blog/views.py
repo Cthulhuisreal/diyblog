@@ -70,7 +70,7 @@ class BloggerListView(generic.ListView):
     """
     Generic class-based view for a list of bloggers.
     """
-    model = BlogAuthor
+    model = User
     paginate_by = 5
 
 
